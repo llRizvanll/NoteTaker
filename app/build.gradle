@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+
+     defaultConfig {
+        applicationId "com.droidrank.checklist"
+         minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def room_lib_version = "1.0.0-rc1"
+    def sdk_lib_version = "26.1.0"
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:$sdk_lib_version"
+    compile "com.android.support:design:$sdk_lib_version"
+    androidTestCompile "com.android.support:support-annotations:$sdk_lib_version"
+    androidTestCompile 'com.android.support.test:rules:0.4.1'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile('com.android.support.test:runner:0.3') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+    implementation "android.arch.persistence.room:runtime:$room_lib_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_lib_version"
+
+    compile 'com.facebook.stetho:stetho:1.5.0'
+
+}
+

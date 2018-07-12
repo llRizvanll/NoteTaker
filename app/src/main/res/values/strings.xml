@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">TravelMate Checklist</string>
+    <string name="enter_item_name_message">Enter item name: </string>
+    <string name="enter_name_here_message">Enter item name here.</string>
+    <string name="ok_text">OK</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="add_item_text">Add New Item</string>
+
+
+
+
+
+    <!--Default items to be added to the list-->
+    <string-array name="default_items">
+        <item>Bags</item>
+        <item>Passport</item>
+        <item>Camera</item>
+        <item>Clothes</item>
+        <item>Keys</item>
+        <item>Books</item>
+    </string-array>
+
+
+    <string name="item_already_exists_message">Item already exists</string>
+
+
+</resources>
